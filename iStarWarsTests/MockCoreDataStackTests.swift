@@ -115,11 +115,4 @@ class MockCoreDataStackTests: XCTestCase {
         let createdDate = DateFormatter.planetDateFormatter.date(from: "2014-12-09T13:50:49.641000Z")!
         XCTAssertEqual(savedPlanet.created, createdDate)
     }
-    
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 }

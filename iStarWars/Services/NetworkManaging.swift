@@ -17,6 +17,21 @@ enum NetworkError: Error {
     case invalidAccess
 }
 
-protocol NetworkManaging {
-    func execute<T: Decodable>(request: Request, completion: @escaping (Result<T, NetworkError>) -> Void)
+protocol URLSessionProtocol {
+    typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
 }
+
+extension URLSession: URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
+        let dataTask = dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
+        return dataTask
+    }
+}
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}

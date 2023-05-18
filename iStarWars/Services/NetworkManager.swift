@@ -8,7 +8,14 @@
 import Foundation
 
 /// Handles various network requests of type Request
-class NetworkManager: NetworkManaging {
+class NetworkManager {
+        
+    private let session: URLSessionProtocol
+    
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
+    
     /// To execute a Request object which was created earlier.
     /// - Parameters:
     ///   - request: Request
@@ -34,7 +41,7 @@ class NetworkManager: NetworkManaging {
             urlRequest.httpBody = body
         }
         
-        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
+        let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.badRequest))

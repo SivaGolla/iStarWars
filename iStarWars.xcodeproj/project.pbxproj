@@ -55,10 +55,12 @@
 		A13B23C72A155E7F008ABB5A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C62A155E7F008ABB5A /* MockCoreDataStack.swift */; };
 		A13B23C92A156196008ABB5A /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkManaging.swift */; };
 		A13B23CA2A156196008ABB5A /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkManaging.swift */; };
-		A13B23CC2A1561E2008ABB5A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23CB2A1561E2008ABB5A /* NetworkManager.swift */; };
+		A13B23CC2A1561E2008ABB5A /* PlanetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23CB2A1561E2008ABB5A /* PlanetsRequest.swift */; };
 		A13B23CE2A1562DB008ABB5A /* Planets.json in Resources */ = {isa = PBXBuildFile; fileRef = A13B23CD2A1562DA008ABB5A /* Planets.json */; };
-		A13B23CF2A1563CF008ABB5A /* PlanetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23882A13CB56008ABB5A /* PlanetsRequest.swift */; };
 		A13B23D02A15648B008ABB5A /* ServiceRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B238A2A13CF99008ABB5A /* ServiceRequestFactory.swift */; };
+		A16D087E2A166579005ECC35 /* MockNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D087D2A166579005ECC35 /* MockNetworkManagerTests.swift */; };
+		A16D08812A166DEA005ECC35 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D087F2A1665B4005ECC35 /* MockURLSession.swift */; };
+		A16D08822A167305005ECC35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23842A12BE89008ABB5A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +122,10 @@
 		A13B23C32A151D83008ABB5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A13B23C62A155E7F008ABB5A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		A13B23C82A156196008ABB5A /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
-		A13B23CB2A1561E2008ABB5A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A13B23CB2A1561E2008ABB5A /* PlanetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRequest.swift; sourceTree = "<group>"; };
 		A13B23CD2A1562DA008ABB5A /* Planets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Planets.json; sourceTree = "<group>"; };
+		A16D087D2A166579005ECC35 /* MockNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManagerTests.swift; sourceTree = "<group>"; };
+		A16D087F2A1665B4005ECC35 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 				A13B23652A12A089008ABB5A /* iStarWarsTests.swift */,
 				A13B23C62A155E7F008ABB5A /* MockCoreDataStack.swift */,
 				A12D48F02A15CCC10091AEF6 /* MockCoreDataStackTests.swift */,
+				A16D087D2A166579005ECC35 /* MockNetworkManagerTests.swift */,
 			);
 			path = iStarWarsTests;
 			sourceTree = "<group>";
@@ -246,7 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				A13B23CD2A1562DA008ABB5A /* Planets.json */,
-				A13B23CB2A1561E2008ABB5A /* NetworkManager.swift */,
+				A16D087F2A1665B4005ECC35 /* MockURLSession.swift */,
+				A13B23CB2A1561E2008ABB5A /* PlanetsRequest.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16D087E2A166579005ECC35 /* MockNetworkManagerTests.swift in Sources */,
 				A12D48F12A15CCC10091AEF6 /* MockCoreDataStackTests.swift in Sources */,
 				A13B23662A12A089008ABB5A /* iStarWarsTests.swift in Sources */,
 				A12D48FC2A16109F0091AEF6 /* DateFormatter+Custom.swift in Sources */,
@@ -494,13 +501,14 @@
 				A13B23922A13D04C008ABB5A /* Request.swift in Sources */,
 				A13B23952A13D04C008ABB5A /* Environment.swift in Sources */,
 				A13B23CA2A156196008ABB5A /* NetworkManaging.swift in Sources */,
+				A16D08812A166DEA005ECC35 /* MockURLSession.swift in Sources */,
 				A13B23B52A13FBC0008ABB5A /* DateFormatter+Custom.swift in Sources */,
 				A13B23992A13D04C008ABB5A /* AppDelegate.swift in Sources */,
-				A13B23CC2A1561E2008ABB5A /* NetworkManager.swift in Sources */,
+				A13B23CC2A1561E2008ABB5A /* PlanetsRequest.swift in Sources */,
+				A16D08822A167305005ECC35 /* NetworkManager.swift in Sources */,
 				A13B23BF2A146E2C008ABB5A /* PlanetService.swift in Sources */,
 				A13B239A2A13D04C008ABB5A /* iStarWars.xcdatamodeld in Sources */,
 				A13B23C22A1473B4008ABB5A /* PlanetTableViewCell.swift in Sources */,
-				A13B23CF2A1563CF008ABB5A /* PlanetsRequest.swift in Sources */,
 				A13B23B92A140237008ABB5A /* PlanetsResponseModel.swift in Sources */,
 				A13B239B2A13D04C008ABB5A /* SceneDelegate.swift in Sources */,
 				A13B23AF2A13F9D5008ABB5A /* Constants.swift in Sources */,

@@ -1,8 +1,8 @@
 //
 //  PlanetsRequest.swift
-//  iStarWars
+//  iStarWarsMock
 //
-//  Created by Venkata Sivannarayana Golla on 16/05/23.
+//  Created by Venkata Sivannarayana Golla on 18/05/23.
 //
 
 import Foundation
@@ -32,12 +32,16 @@ class PlanetsRequest: ServiceProviding {
     func fetch<T>(completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
         
         let request = makeRequest()
-        let networkManager = NetworkManager(session: URLSession.shared)
+        
+        let mockSession = MockURLSession()
+        let dataTask = MockURLSessionDataTask()
+        mockSession.mockDataTask = dataTask
+        
+        let networkManager = NetworkManager(session: mockSession)
         networkManager.execute(request: request) { result in
             DispatchQueue.main.async {
                 completion(result)
             }
         }
     }
-    
 }
