@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// It is a spinner shown to the user during a long operation 
 open class LoadingView {
     internal static var spinner: UIActivityIndicatorView?
     public static var style: UIActivityIndicatorView.Style = .large

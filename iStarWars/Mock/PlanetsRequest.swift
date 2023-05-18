@@ -14,7 +14,7 @@ protocol ServiceProviding {
     func fetch<T>(completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable
 }
 
-/// Service Request to fetch Astronomy Picture of the day service
+/// Service Request to fetch Planet records
 class PlanetsRequest: ServiceProviding {
     
     /// Populates request based on query parameters

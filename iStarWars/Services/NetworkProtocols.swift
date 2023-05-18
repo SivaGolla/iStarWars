@@ -1,5 +1,5 @@
 //
-//  NetworkManaging.swift
+//  NetworkProtocols.swift
 //  iStarWars
 //
 //  Created by Venkata Sivannarayana Golla on 18/05/23.
@@ -7,16 +7,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case urlError
-    case badRequest
-    case internalServerError
-    case requestTimedOut
-    case parsingError
-    case noData
-    case invalidAccess
-}
-
+// MARK: Dependency Injection protocols for Networking
 protocol URLSessionProtocol {
     typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
     

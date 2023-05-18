@@ -53,8 +53,7 @@
 		A13B23C42A151D83008ABB5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C32A151D83008ABB5A /* LoadingView.swift */; };
 		A13B23C52A151D83008ABB5A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C32A151D83008ABB5A /* LoadingView.swift */; };
 		A13B23C72A155E7F008ABB5A /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C62A155E7F008ABB5A /* MockCoreDataStack.swift */; };
-		A13B23C92A156196008ABB5A /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkManaging.swift */; };
-		A13B23CA2A156196008ABB5A /* NetworkManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkManaging.swift */; };
+		A13B23CA2A156196008ABB5A /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkProtocols.swift */; };
 		A13B23CC2A1561E2008ABB5A /* PlanetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23CB2A1561E2008ABB5A /* PlanetsRequest.swift */; };
 		A13B23CE2A1562DB008ABB5A /* Planets.json in Resources */ = {isa = PBXBuildFile; fileRef = A13B23CD2A1562DA008ABB5A /* Planets.json */; };
 		A13B23D02A15648B008ABB5A /* ServiceRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B238A2A13CF99008ABB5A /* ServiceRequestFactory.swift */; };
@@ -129,7 +128,7 @@
 		A13B23C02A1473B4008ABB5A /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
 		A13B23C32A151D83008ABB5A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A13B23C62A155E7F008ABB5A /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
-		A13B23C82A156196008ABB5A /* NetworkManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManaging.swift; sourceTree = "<group>"; };
+		A13B23C82A156196008ABB5A /* NetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
 		A13B23CB2A1561E2008ABB5A /* PlanetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRequest.swift; sourceTree = "<group>"; };
 		A13B23CD2A1562DA008ABB5A /* Planets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Planets.json; sourceTree = "<group>"; };
 		A16D087D2A166579005ECC35 /* MockNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManagerTests.swift; sourceTree = "<group>"; };
@@ -246,8 +245,8 @@
 				A13B23862A13CAE8008ABB5A /* Request.swift */,
 				A13B23882A13CB56008ABB5A /* PlanetsRequest.swift */,
 				A13B238A2A13CF99008ABB5A /* ServiceRequestFactory.swift */,
-				A13B23C82A156196008ABB5A /* NetworkManaging.swift */,
 				A13B23842A12BE89008ABB5A /* NetworkManager.swift */,
+				A13B23C82A156196008ABB5A /* NetworkProtocols.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -505,7 +504,6 @@
 				A13B23832A12B0ED008ABB5A /* Environment.swift in Sources */,
 				A13B23892A13CB56008ABB5A /* PlanetsRequest.swift in Sources */,
 				A13B23852A12BE89008ABB5A /* NetworkManager.swift in Sources */,
-				A13B23C92A156196008ABB5A /* NetworkManaging.swift in Sources */,
 				A13B23B42A13FBC0008ABB5A /* DateFormatter+Custom.swift in Sources */,
 				A13B234C2A12A088008ABB5A /* AppDelegate.swift in Sources */,
 				A13B23BE2A146E2C008ABB5A /* PlanetService.swift in Sources */,
@@ -551,7 +549,7 @@
 				A13B23BC2A146CD0008ABB5A /* PlanetsTableViewController.swift in Sources */,
 				A13B23922A13D04C008ABB5A /* Request.swift in Sources */,
 				A13B23952A13D04C008ABB5A /* Environment.swift in Sources */,
-				A13B23CA2A156196008ABB5A /* NetworkManaging.swift in Sources */,
+				A13B23CA2A156196008ABB5A /* NetworkProtocols.swift in Sources */,
 				A16D08812A166DEA005ECC35 /* MockURLSession.swift in Sources */,
 				A13B23B52A13FBC0008ABB5A /* DateFormatter+Custom.swift in Sources */,
 				A16D08892A1693A6005ECC35 /* PlanetsDataSource.swift in Sources */,

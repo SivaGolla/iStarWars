@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// A cell or row to show Planet data
 class PlanetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!

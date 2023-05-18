@@ -7,6 +7,17 @@
 
 import Foundation
 
+/// Custom Errors
+enum NetworkError: Error {
+    case urlError
+    case badRequest
+    case internalServerError
+    case requestTimedOut
+    case parsingError
+    case noData
+    case invalidAccess
+}
+
 /// Handles various network requests of type Request
 class NetworkManager {
         

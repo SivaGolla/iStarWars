@@ -7,10 +7,7 @@
 
 import Foundation
 
-protocol ResourceDataSourcing {
-    
-}
-
+/// A data source for Planets View Controller - responsible for fetching planet records either from a remote server or reading from local persistence if the data has already been downloaded.
 class PlanetsDataSource {
     
     private(set) var planets: [Planet] = []

@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+/// Core data stack
 public class CoreDataStack {
     
     public static var shared = CoreDataStack()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Factory class that generates requests to fetch various resources
 class ServiceRequestFactory {
     static func createPlanets() -> ServiceProviding {
         return PlanetsRequest()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// To create a mock URLSession that can be injected into the network layer for testing purposes, you can define a protocol that represents the network operations and provide the mock URLSession that loads data from a local JSON file.
 class MockURLSession: URLSessionProtocol {
 
     var mockDataTask = MockURLSessionDataTask()

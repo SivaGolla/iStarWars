@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+/// PlanetService is responsible for fetching planet records from local persistence if the data has already been downloaded.
 class PlanetService {
     let context: NSManagedObjectContext
     
@@ -35,6 +36,9 @@ class PlanetService {
         return fetchedResultsController
     }
     
+    /// Read and retrieve planets from local persistence and return the array of Planet objects if available, otherwise return empty list
+    /// - Parameter sortDescriptors: sortDescriptors
+    /// - Returns: [Planet]
     func fetchAllPlanets(sortDescriptors: [NSSortDescriptor]) -> [Planet] {
         return fetchAllResources(sortDescriptors: sortDescriptors)
     }
@@ -56,6 +60,8 @@ class PlanetService {
         return [T]()
     }
     
+    /// Save the array of Planet objects to local persistence
+    /// - Parameter planetItems: array of codable PlanetItem objects download from server
     func saveItemsInCoreData(planetItems: [PlanetItem]) {
         _ = planetItems.map { self.createPlanetEntity(with: $0) }
         
@@ -66,6 +72,9 @@ class PlanetService {
         }
     }
     
+    /// Generates a Planet model object using a codable PlanetItem object
+    /// - Parameter planetItem: codable PlanetItem object
+    /// - Returns: A coredata managed object - Planet
     private func createPlanetEntity(with planetItem: PlanetItem) -> NSManagedObject {
         let planet = Planet(context: context)
         planet.name = planetItem.name
