@@ -32,7 +32,8 @@ class PlanetsRequest: ServiceProviding {
     func fetch<T>(completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable {
         
         let request = makeRequest()
-        NetworkManager().execute(request: request) { result in
+        let networkManager: NetworkManaging = NetworkManager()
+        networkManager.execute(request: request) { result in
             DispatchQueue.main.async {
                 completion(result)
             }

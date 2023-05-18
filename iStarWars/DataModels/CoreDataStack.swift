@@ -8,14 +8,14 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+public class CoreDataStack {
     
-    static var shared = CoreDataStack()
+    public static var shared = CoreDataStack()
     
-    private init() { }
+    public init() { }
     
     // MARK: - Core Data Stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    public lazy var persistentContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "iStarWars")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -28,7 +28,7 @@ class CoreDataStack {
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    public func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

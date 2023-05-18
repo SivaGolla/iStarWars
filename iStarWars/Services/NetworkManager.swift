@@ -6,20 +6,9 @@
 //
 
 import Foundation
-import CoreData
-
-enum NetworkError: Error {
-    case urlError
-    case badRequest
-    case internalServerError
-    case requestTimedOut
-    case parsingError
-    case noData
-    case invalidAccess
-}
 
 /// Handles various network requests of type Request
-class NetworkManager: NSObject {
+class NetworkManager: NetworkManaging {
     /// To execute a Request object which was created earlier.
     /// - Parameters:
     ///   - request: Request
@@ -60,22 +49,12 @@ class NetworkManager: NSObject {
                 }
                 
                 let decoder = JSONDecoder()
-                
-                let concurrencyType = NSManagedObjectContextConcurrencyType.privateQueueConcurrencyType
-                let privateContext = NSManagedObjectContext(concurrencyType: concurrencyType)
-                privateContext.parent = CoreDataStack.shared.persistentContainer.viewContext
-                
-                decoder.userInfo[CodingUserInfoKey.managedObjectContext] = privateContext
-                
-                privateContext.performAndWait {
-                    do {
-                        let result = try decoder.decode(T.self, from: data)
-                        try privateContext.save()
-                        completion(.success(result))
-                    } catch {
-                        debugPrint(error.localizedDescription)
-                        completion(.failure(.parsingError))
-                    }
+                do {
+                    let result = try decoder.decode(T.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    debugPrint(error.localizedDescription)
+                    completion(.failure(.parsingError))
                 }
                 
             case 401:
@@ -87,12 +66,5 @@ class NetworkManager: NSObject {
             }
         })
         task.resume()
-    }
-}
-    
-extension NetworkManager : URLSessionDelegate {
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: @escaping (CachedURLResponse?) -> Void) {
-        
-        completionHandler(nil)
     }
 }

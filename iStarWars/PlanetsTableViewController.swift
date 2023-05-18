@@ -14,7 +14,7 @@ class PlanetsTableViewController: UITableViewController {
 //    private var fetchedResultsController: NSFetchedResultsController<Planet>?
     private var planets: [Planet] = []
     private lazy var planetService: PlanetService = {
-        return PlanetService()
+        return PlanetService(moc: CoreDataStack.shared.persistentContainer.viewContext)
     }()
     
     override func viewDidLoad() {
@@ -48,7 +48,10 @@ class PlanetsTableViewController: UITableViewController {
                 case .failure(let error):
                     debugPrint(error.localizedDescription)
                     
-                case .success(_):
+                case .success(let response):
+                    
+                    self?.planetService.saveItemsInCoreData(planetItems: response.results)
+                    
                     let sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
                     if let planets = self?.planetService.fetchAllPlanets(sortDescriptors: sortDescriptors) {
                         self?.planets = planets

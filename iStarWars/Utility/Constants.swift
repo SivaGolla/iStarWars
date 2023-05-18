@@ -11,6 +11,6 @@ enum Constants {
     
 }
 
-enum DecoderError: Error {
+public enum DecoderError: Error {
     case missingManagedObjectContext
 }

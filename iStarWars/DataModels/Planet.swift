@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Planet)
 class Planet: NSManagedObject, Decodable {
@@ -15,8 +16,7 @@ class Planet: NSManagedObject, Decodable {
     }
     
     required convenience init(from decoder: Decoder) throws {
-        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext,
-        let entity = NSEntityDescription.entity(forEntityName: "Planet", in: context) else {
+        guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderError.missingManagedObjectContext
         }
         

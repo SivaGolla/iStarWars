@@ -13,5 +13,5 @@ struct PlanetsResponseModel: Decodable {
     let next: String?
     let previous: String?
     
-    let results: [Planet]
+    let results: [PlanetItem]
 }
