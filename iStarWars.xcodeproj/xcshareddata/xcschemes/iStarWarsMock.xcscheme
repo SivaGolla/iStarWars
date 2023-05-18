@@ -66,6 +66,16 @@
                ReferencedContainer = "container:iStarWars.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A13B236A2A12A089008ABB5A"
+               BuildableName = "iStarWarsUITests.xctest"
+               BlueprintName = "iStarWarsUITests"
+               ReferencedContainer = "container:iStarWars.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -6,6 +6,15 @@
 //
 
 import XCTest
+import CoreData
+@testable import iStarWarsMock
+
+extension XCUIApplication {
+
+    var isDisplayingHomeScreen: Bool {
+        return otherElements["homeView"].exists
+    }
+}
 
 class iStarWarsUITestsLaunchTests: XCTestCase {
 

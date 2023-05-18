@@ -13,7 +13,7 @@ class PlanetTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        accessibilityIdentifier = "planetTableViewCell"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

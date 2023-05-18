@@ -12,13 +12,14 @@ class PlanetsTableViewController: UITableViewController {
 
     
 //    private var fetchedResultsController: NSFetchedResultsController<Planet>?
-    private var planets: [Planet] = []
-    private lazy var planetService: PlanetService = {
-        return PlanetService(moc: CoreDataStack.shared.persistentContainer.viewContext)
-    }()
+    private var datasource = PlanetsDataSource()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.accessibilityIdentifier = "homeView"
+        title = "Star Wars"
         tableView.rowHeight = 70
         fetchPlanets()
     }
@@ -26,41 +27,23 @@ class PlanetsTableViewController: UITableViewController {
     private func fetchPlanets() {
         LoadingView.start()
         
-        let sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        planets = planetService.fetchAllPlanets(sortDescriptors: sortDescriptors)
+        datasource.fetchPlanets()
         
-        if !planets.isEmpty {
+        if !datasource.planets.isEmpty {
             tableView.reloadData()
             LoadingView.stop()
             return
         }
         
-        loadRemotePlanets()
-    }
-    
-    private func loadRemotePlanets() {
-        
-        let serviceRequest = ServiceRequestFactory.createPlanets()
-        serviceRequest.fetch { [weak self] (result: Result<PlanetsResponseModel, NetworkError>) in
-        
-            DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    debugPrint(error.localizedDescription)
-                    
-                case .success(let response):
-                    
-                    self?.planetService.saveItemsInCoreData(planetItems: response.results)
-                    
-                    let sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-                    if let planets = self?.planetService.fetchAllPlanets(sortDescriptors: sortDescriptors) {
-                        self?.planets = planets
-                    }
-                    self?.tableView.reloadData()
-                }
-                
-                LoadingView.stop()
+        datasource.loadRemotePlanets { [weak self] success in
+            
+            if !success {
+                return
             }
+            
+            self?.datasource.fetchPlanets()
+            self?.tableView.reloadData()
+            LoadingView.stop()
         }
     }
 
@@ -73,13 +56,13 @@ class PlanetsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return planets.count
+        return datasource.planets.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetCell", for: indexPath) as! PlanetTableViewCell
 
-        let planet = planets[indexPath.row]
+        let planet = datasource.planets[indexPath.row]
         cell.nameLabel.text = planet.name
 
         return cell
