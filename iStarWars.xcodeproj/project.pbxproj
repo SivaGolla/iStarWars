@@ -64,6 +64,7 @@
 		A16D08892A1693A6005ECC35 /* PlanetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08872A1693A6005ECC35 /* PlanetsDataSource.swift */; };
 		A16D08942A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */; };
 		A16D08952A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */; };
+		A16D08962A17754E005ECC35 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23C82A156196008ABB5A /* NetworkProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16D08962A17754E005ECC35 /* NetworkProtocols.swift in Sources */,
 				A13B23802A12A26F008ABB5A /* CoreDataStack.swift in Sources */,
 				A12D48FE2A16152D0091AEF6 /* PlanetItem.swift in Sources */,
 				A13B23B12A13FA08008ABB5A /* CodingUserInfoKey+Custom.swift in Sources */,
