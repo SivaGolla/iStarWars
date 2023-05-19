@@ -62,7 +62,7 @@ class PlanetsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetCell", for: indexPath) as! PlanetTableViewCell
 
         let planet = datasource.planets[indexPath.row]
-        cell.nameLabel.text = planet.name
+        cell.configure(name: planet.name, population: planet.population)
 
         return cell
     }

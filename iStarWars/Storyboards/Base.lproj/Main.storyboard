@@ -23,22 +23,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="385.5" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlf-bd-E9D">
-                                            <rect key="frame" x="20" y="11" width="358" height="47.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlf-bd-E9D">
+                                            <rect key="frame" x="20" y="4" width="345.5" height="34"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdP-La-afk">
+                                            <rect key="frame" x="20" y="46" width="345.5" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="6c2-YB-X67"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="nlf-bd-E9D" secondAttribute="bottom" constant="11.5" id="4hB-hX-BYh"/>
-                                        <constraint firstItem="nlf-bd-E9D" firstAttribute="leading" secondItem="8UD-Em-pmQ" secondAttribute="leading" constant="20" symbolic="YES" id="CeN-vp-pRJ"/>
-                                        <constraint firstItem="nlf-bd-E9D" firstAttribute="top" secondItem="8UD-Em-pmQ" secondAttribute="top" constant="11" id="IXE-so-Jqp"/>
-                                        <constraint firstAttribute="trailing" secondItem="nlf-bd-E9D" secondAttribute="trailing" constant="7.5" id="eae-zB-JQn"/>
+                                        <constraint firstAttribute="bottom" secondItem="FdP-La-afk" secondAttribute="bottom" constant="4" id="21g-Ts-ndf"/>
+                                        <constraint firstItem="FdP-La-afk" firstAttribute="top" secondItem="nlf-bd-E9D" secondAttribute="bottom" constant="8" id="53a-kr-acf"/>
+                                        <constraint firstItem="nlf-bd-E9D" firstAttribute="leading" secondItem="8UD-Em-pmQ" secondAttribute="leading" constant="20" id="CeN-vp-pRJ"/>
+                                        <constraint firstItem="nlf-bd-E9D" firstAttribute="top" secondItem="8UD-Em-pmQ" secondAttribute="top" constant="4" id="IXE-so-Jqp"/>
+                                        <constraint firstAttribute="trailing" secondItem="FdP-La-afk" secondAttribute="trailing" constant="20" id="KC4-lF-Dvq"/>
+                                        <constraint firstAttribute="trailing" secondItem="nlf-bd-E9D" secondAttribute="trailing" constant="20" id="eae-zB-JQn"/>
+                                        <constraint firstItem="FdP-La-afk" firstAttribute="leading" secondItem="8UD-Em-pmQ" secondAttribute="leading" constant="20" id="fc1-Od-TSK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="nlf-bd-E9D" id="Dfc-nW-DWJ"/>
+                                    <outlet property="populationLabel" destination="FdP-La-afk" id="Yhx-6o-TUk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

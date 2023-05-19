@@ -11,6 +11,7 @@ import UIKit
 class PlanetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var populationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +24,13 @@ class PlanetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func prepareForReuse() {
+        nameLabel.text = ""
+        populationLabel.text = "Population:"
+    }
+    
+    func configure(name: String?, population: String?) {
+        nameLabel.text = name
+        populationLabel.text = "Population: \(population ?? "")"
+    }
 }
