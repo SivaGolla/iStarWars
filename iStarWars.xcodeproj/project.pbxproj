@@ -62,6 +62,8 @@
 		A16D08822A167305005ECC35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B23842A12BE89008ABB5A /* NetworkManager.swift */; };
 		A16D08882A1693A6005ECC35 /* PlanetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08872A1693A6005ECC35 /* PlanetsDataSource.swift */; };
 		A16D08892A1693A6005ECC35 /* PlanetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08872A1693A6005ECC35 /* PlanetsDataSource.swift */; };
+		A16D08942A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */; };
+		A16D08952A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,7 @@
 		A16D087D2A166579005ECC35 /* MockNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManagerTests.swift; sourceTree = "<group>"; };
 		A16D087F2A1665B4005ECC35 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		A16D08872A1693A6005ECC35 /* PlanetsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsDataSource.swift; sourceTree = "<group>"; };
+		A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,7 @@
 				A13B23C32A151D83008ABB5A /* LoadingView.swift */,
 				A13B23B02A13FA08008ABB5A /* CodingUserInfoKey+Custom.swift */,
 				A13B23B32A13FBC0008ABB5A /* DateFormatter+Custom.swift */,
+				A16D08932A1773A4005ECC35 /* UIViewController+Custom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -509,6 +513,7 @@
 				A13B23BE2A146E2C008ABB5A /* PlanetService.swift in Sources */,
 				A13B23562A12A088008ABB5A /* iStarWars.xcdatamodeld in Sources */,
 				A13B23C12A1473B4008ABB5A /* PlanetTableViewCell.swift in Sources */,
+				A16D08942A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */,
 				A13B23B82A140237008ABB5A /* PlanetsResponseModel.swift in Sources */,
 				A13B234E2A12A088008ABB5A /* SceneDelegate.swift in Sources */,
 				A13B23AE2A13F9D5008ABB5A /* Constants.swift in Sources */,
@@ -555,6 +560,7 @@
 				A16D08892A1693A6005ECC35 /* PlanetsDataSource.swift in Sources */,
 				A13B23992A13D04C008ABB5A /* AppDelegate.swift in Sources */,
 				A13B23CC2A1561E2008ABB5A /* PlanetsRequest.swift in Sources */,
+				A16D08952A1773A4005ECC35 /* UIViewController+Custom.swift in Sources */,
 				A16D08822A167305005ECC35 /* NetworkManager.swift in Sources */,
 				A13B23BF2A146E2C008ABB5A /* PlanetService.swift in Sources */,
 				A13B239A2A13D04C008ABB5A /* iStarWars.xcdatamodeld in Sources */,

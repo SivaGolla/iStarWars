@@ -20,7 +20,7 @@ class PlanetsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.accessibilityIdentifier = "homeView"
-        title = "Star Wars"
+        title = "Star Wars - Planets"
         tableView.rowHeight = 70
         fetchPlanets()
     }
@@ -39,6 +39,9 @@ class PlanetsTableViewController: UITableViewController {
         datasource.loadRemotePlanets { [weak self] success in
             
             if !success {
+                if let alert = self?.okAlertPrompt(title: "Star Wars - Planets", message: "Failed to load Planets") {
+                    self?.present(alert, animated: true, completion: nil)
+                }
                 return
             }
             
